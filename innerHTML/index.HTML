@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<script>
+			//var five = 5;
+			//var numFive = 5;
+			//var binary = false;
+
+			function question1() {
+				//alert('Do you like pop?');
+				document.getElementById("assessment").innerHTML = "Break My Soul"
+
+			}
+			function question2() {
+				//alert('Do you like rock?')
+			
+			//question1();//
+
+			//alert(five * numFive);//
+			document.getElementById("assessment").innerHTML = "Teenagers"
+		}
+		</script>
+
+		<style>
+			button{
+				color:slategray;
+				background-color: whitesmoke;
+				width: 100px;
+				height: 100px;
+				
+
+
+			}
+			#assessment{
+				background-color: darkslateblue;
+				width: 500px;
+				height: 500px;
+				float: right;
+				color: whitesmoke;
+
+			}
+			#press{
+				float: left;
+				width: 100px;
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+		<div id="press">
+			<button onclick="question1()">Do you like pop?</button>
+			<button onclick="question2()">Do you like rock?</button>
+			
+		</div>
+		<div id="assessment">
+			<p>Your song rec is: </p>
+
+			
+
+		</div>
+
+
+	</body>
+
+</html>
