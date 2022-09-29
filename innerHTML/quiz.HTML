@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>What should you read next?</title>
+	</head>
+	<body>
+		<div>
+			<h1>What are you looking to read?</h1>
+			<button onclick="s1()" value = 1 class='button'>dystopia based on beauty</button>
+			<button onclick="s1()" value = 2>dystopia based on child murder</button>
+			<button onclick="s1()" value = 3>magic users in West Africa</button>
+			<button onclick="s1()" value = 4>cyberpunk princesses</button>
+		</div>
+
+		<h1>You should read:</h1>
+		<div id="selection">
+			
+
+		</div>
+	</body>
+	<script>  
+		var allAnswers = ["Uglies", "Hunger Games", "Children of Blood and Bone", "Lunar Chronicles"];
+		
+
+		function s1(){
+			alert('this one!'); 
+			document.getElementById("selection").innerHTML = allAnswers[0];
+		
+		button = document.getElementById('button.1');
+				buttonVal = button.value;
+				console.log(buttonVal);
+				if(buttonVal == 1){
+					console.log(allAnswers[0]);
+				else if(buttonVal == 2){
+					console.log(allAnswers[1]);
+				}				
+				}
+			}
+
+	</script>
+</html>	
