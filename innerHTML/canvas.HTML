@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style>
+			#myCanvas{
+				border: 2px solid;
+				background-color: slategray;
+				width:  300px;
+				height: 300px;
+			}
+
+
+		</style>
+	</head>
+
+	<body>
+
+		<canvas id="myCanvas"></canvas>
+		<!-- <button onclick="draw(100)">click here!</button>
+		<button onclick="draw(25)">click here!</button> -->
+	
+
+		<script>
+			var canvas = document.getElementById('myCanvas');
+			var ctx = canvas.getContext('2d');
+			// ctx.moveTo(0, 0);
+			// ctx.lineTo(300, 300);
+			// ctx.stroke();
+
+			// function draw(param1){
+			// 	ctx.beginPath();
+			// 	ctx.moveTo(param1, 0);
+			// 	ctx.lineTo(param1, 300);
+			// 	ctx.stroke();
+			// }
+			function createLine(startX, startY, finishX, finishY, lineColor, context){
+				this.startX = startX;
+				this.startY = startY;
+				this.finishX = finishX;
+				this.finishY = finishY;
+				this.lineColor = lineColor;
+				this.context = context;
+				this.drawLine = function(){
+					this.context.beginPath();
+					this.context.moveTo(this.startX, this.startY);
+					this.context.lineTo(this.finishX, this.finishY);
+					this.context.strokeStyle = lineColor;
+					this.context.stroke();
+
+				}
+			}
+			var line1 = new createLine(10,0,300,300,'whitesmoke',ctx);
+				line1.drawLine();
+
+
+			</script>
+		</body>
+	</html>

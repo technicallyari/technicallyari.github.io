@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style>
+		
+
+		</style>
+		<script>
+		// 	var myList = ['apple','banana','coconut'];
+		// 	myList[1];
+
+			
+		// var myObject = {
+		// 		name: "John",
+		// 		color: "brown",
+		// 		length: "long",
+		// 		type:"curly",
+							
+		// 			notice:function(){
+		// 			alert(this.color);
+		// 		}
+		// 	}
+			
+
+		
+
+		//function hairType(name,color,length,type){
+		// 	this.name = name;
+		// 	this.color = color;
+		// 	this.length = length;
+		// 	this.type = type;
+		// 	this.notice = function(){
+		// 		alert(this.name + 'hair is' + this.color);
+		// 	}
+		// }
+		// var julie = new hairType('julie', 'red', 'short', 'wavy');
+		// console.log(julie);
+
+			var printType1 = {
+				color: "grayscale",
+				copies: "2",
+				binding: "none",
+				rush:"yes",
+							
+					notice:function(){
+					alert(this.copies);
+				}
+			}
+
+
+
+		function printType(color,copies,binding,rush){
+			this.color = color;
+			this.copies = copies;
+			this.binding = binding;
+			this.rush = rush;
+	
+				alert('print in ' + this.color + ' with ' + this.copies + ' copies ');
+			}
+		
+
+		var order = new printType('color', '5', 'coverbind', 'none');
+		console.log(order);
+
+
+		//printType.notice();
+
+			//function nameOfFunction(param1,param2,etc){}
+		</script>
+	</head>
+
+	<body>
+	</body>
+	</html>

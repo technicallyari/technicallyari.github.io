@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>For Loop</title>
+		
+
+	</head>
+<body>
+	<h1>My Closet</h1>
+	<div id="closet">
+		
+	</div>
+
+
+</body>
+<script>			
+			//var myFruitArray = ["coconut", "blueberry", "cherry"];
+			//alert(myFruitArray[0]);
+
+			var myCloset = ["skirt", "bodysuit", "dress", "tshirt", "jeans", "sweater"];
+			
+closet = ''
+			/*for(i=0; i<6; i++){
+				console.log(myCloset[i]);
+				closet += myCloset[i] + "<br>";
+				document.body.style.backgroundColor = "whitesmoke";
+				document.getElementById('closet').innerHTML = closet;
+			}*/
+			x =0;
+			while (x < myCloset.length){
+				console.log(myCloset[x]);
+				closet += myCloset[x] + "<br>";
+				x++;
+				document.getElementById("closet").innerHTML = closet;
+			}
+		</script>
+
+</html>
