@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style>
+
+
+		</style>
+		
+	</head>
+
+	<body>
+			
+		<button id="b2">clicky</button>
+		<button>clicky</button>
+		<div id= "dogpic">
+			
+		</div>
+		</body>
+		<script
+			  src="https://code.jquery.com/jquery-3.6.1.min.js"
+			  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+			  crossorigin="anonymous"></script>
+
+			  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+			  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/hot-sneaks/jquery-ui.css">
+			  <script>
+			  	$(document).ready(function(){
+			  		console.log("ready")
+
+			  	})
+			  	$(document).ready(function(){
+			  		$('#b2').click(function(){
+			  			alert("hi hi")
+			  		})
+			  		$('button').click(function(){
+			  			alert("hi hi")
+			  		})
+			  	})
+			  	/*
+			  		name:"Ari"
+			  		role:"student"
+			  		college: "queens"
+			  		notice:function(){
+	
+			  		}
+			  		*/
+
+			  	newData = JSON.parse('[{"name":"ariela","role": "student","college": "queens"},{"name":"sarah","role": "student","college":"queens"},{"name":"moses","role": "student","college": "queens"},{"name":"jennifer","role": "student","college": "queens"}]');
+			  	console.log(newData);
+
+			  	$.get("https://dog.ceo/api/breeds/image/random",function(data){
+			  		console.log(data);
+			  		dogImg = '<img src="' + data.message +'">';
+			  		console.log(dogImg);
+			  		$('#dogpic').html(dogImg);
+			  		
+			  	});
+
+
+
+			  </script>
+		
+		</html>
