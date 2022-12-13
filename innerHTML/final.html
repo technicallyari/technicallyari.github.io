@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Book Recs</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/dot-luv/jquery-ui.css">
+    
+    <style>
+       body{
+
+        background-color: lightsteelblue;
+        color:black;
+        font-family: monospace;
+       }
+       button{
+        background-color: lightpink;
+       }
+
+
+    </style>
+  </head>
+    <body> 
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                      <h1>Book Randomizer</h1>
+                    <button id="gen">Click for Book</button>
+
+                      <p id="book"></p>
+
+                      
+
+                    </div>
+                    <div class="col">
+                      <div id="viewerCanvas" style="width: 400px; height: 600px"></div>
+                    </div>
+                </div>
+              <!-- </div>
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                        <p>book</p>
+                        
+                    <div class="col">two
+                      <p class="last"></p>
+                      
+                    </div>
+
+                  </div> -->
+              </div>
+     
+    </body>
+                  <!--javascripts links-->
+                  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+                  <script
+                    src="https://code.jquery.com/jquery-3.6.1.min.js"
+                    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+                    crossorigin="anonymous">
+                  </script>
+                  <script
+                    src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+                    integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
+                    crossorigin="anonymous">
+                  </script>
+                
+
+                   <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+                  <script type="text/javascript">
+                    google.books.load();
+
+                        
+                        // test = getRndInteger(9780000000001,9780000000008)
+                        // function getRndInteger(min, max) {
+                        //   return Math.floor(Math.random() * (max - min + 1) ) + min;
+                        //   console.log(getRndInteger);
+                        // }
+                        
+
+                  
+
+                    document.getElementById('gen').onclick = getISBN;
+                    $("gen").click(getISBN());
+                  
+                    function getISBN(){
+                      var isbnList=['9781101910092','9781613747964','9780987072245','9780061684890','9781250007209','9781847389091','9780545387200'];
+                    var randomIndex = Math.floor(Math.random() * isbnList.length);
+                    var randomISBN = isbnList[randomIndex];
+                    isbn=randomISBN;
+                    console.log(isbn); 
+                    //get book data
+                     document.getElementById('book').innerHTML = isbn;
+
+                  }
+
+
+                      function initialize() {
+                      var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+                      viewer.load('ISBN:'+ isbn);
+                      //9780061684890
+                      console.log('ISBN:'+ isbn);
+                    }
+
+                    google.books.setOnLoadCallback(initialize);
+                    // function generate (){
+                    //   document.getElementById('book').innerHTML = isbn;
+
+                    //   console.log(isbn);
+                    // }
+    
+                    
+              </script>
+                  </script>
+  
+</html>

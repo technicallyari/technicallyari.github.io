@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>title</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/dot-luv/jquery-ui.css">
+    
+    <style>
+        .ui-widget-content{
+          background-color: lightslategray;
+          background: lightslategray;
+        }
+
+
+
+
+    </style>
+  </head>
+    <body>
+            <div class="container">
+                <div class="row">
+                    <div class="col">LOGO</div>
+                    <div class="col">LINKS</div>
+                </div>
+              </div>
+                <div class="container">
+                  <div class="row">
+                    <div class="col">one
+                        <ul id="menu">
+                              <li class="ui-state-disabled"><div>Toys (n/a)</div></li>
+                              <li><div>Books</div></li>
+                              <li><div>Clothing</div></li>
+                              <li><div>Electronics</div>
+                                <ul>
+                                  <li class="ui-state-disabled"><div>Home Entertainment</div></li>
+                                  <li><div>Car Hifi</div></li>
+                                  <li><div>Utilities</div></li>
+                                </ul>
+                              </li>
+                              <li><div>Movies</div></li>
+                              <li><div>Music</div>
+                                <ul>
+                                  <li><div>Rock</div>
+                                    <ul>
+                                      <li><div>Alternative</div></li>
+                                      <li><div>Classic</div></li>
+                                    </ul>
+                                  </li>
+                                  <li><div>Jazz</div>
+                                    <ul>
+                                      <li><div>Freejazz</div></li>
+                                      <li><div>Big Band</div></li>
+                                      <li><div>Modern</div></li>
+                                    </ul>
+                                  </li>
+                                  <li><div>Pop</div></li>
+                                </ul>
+                              </li>
+                              <li class="ui-state-disabled"><div>Specials (n/a)</div></li>
+                            </ul>
+                    </div>
+                    <div class="col">two
+                      <p class="meme"></p>
+                    </div>
+
+                  </div>
+              </div>
+                
+
+
+
+
+
+
+    </body>
+    <!--javascripts links-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous">
+    </script>
+    <script
+      src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+      integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
+      crossorigin="anonymous">
+    </script>
+    <script>
+       $( function() {
+    $( "#menu" ).menu();
+  } );
+        $.get("https://api.imgflip.com/get_memes",function(data,status){
+          //console.log(data['message']);
+          console.log(data['data']['memes'][9]['url']);
+          html = '<img src="'+ data['data']['memes'][9]['url']+'">'
+          console.log(html);
+          $("p").html(html);
+        })
+      
+    </script>
+  
+</html>
