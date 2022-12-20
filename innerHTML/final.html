@@ -20,6 +20,14 @@
        button{
         background-color: lightpink;
        }
+       #desc{
+        background-color: white;
+       }
+       #left{
+        height: 300px;
+        width:70%;
+        
+       }
 
 
     </style>
@@ -28,11 +36,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                      <h1>Book Randomizer</h1>
-                    <button id="gen">Click for Book</button>
+                      <h1>My Book Recs</h1>
+                    <button id="gen">Click here!</button>
 
                       <p id="book"></p>
-
+                      <p>This site randomizes a book from my personal collection that I am always recommending to friends</p>
+                        <div id="left">
+                        <p id="desc"></p>
+                        </div>
                       
 
                     </div>
@@ -67,10 +78,12 @@
                     integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
                     crossorigin="anonymous">
                   </script>
-                
-
-                   <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+                  <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
                   <script type="text/javascript">
+                     
+
+                  
+
                     google.books.load();
 
                         
@@ -79,25 +92,22 @@
                         //   return Math.floor(Math.random() * (max - min + 1) ) + min;
                         //   console.log(getRndInteger);
                         // }
-                        
-
-                  
-
+                    
                     document.getElementById('gen').onclick = getISBN;
                     $("gen").click(getISBN());
                   
                     function getISBN(){
-                      var isbnList=['9781101910092','9781613747964','9780987072245','9780061684890','9781250007209','9781847389091','9780545387200'];
+                      var isbnList=['9781250007209','9781847389091','9780545387200','9780143111603','9780147511331'];
                     var randomIndex = Math.floor(Math.random() * isbnList.length);
                     var randomISBN = isbnList[randomIndex];
                     isbn=randomISBN;
                     console.log(isbn); 
-                    //get book data
-                     document.getElementById('book').innerHTML = isbn;
+                    
+                     // document.getElementById('book').innerHTML = isbn;
 
                   }
-
-
+                  
+                 
                       function initialize() {
                       var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
                       viewer.load('ISBN:'+ isbn);
@@ -106,12 +116,6 @@
                     }
 
                     google.books.setOnLoadCallback(initialize);
-                    // function generate (){
-                    //   document.getElementById('book').innerHTML = isbn;
-
-                    //   console.log(isbn);
-                    // }
-    
                     
               </script>
                   </script>
